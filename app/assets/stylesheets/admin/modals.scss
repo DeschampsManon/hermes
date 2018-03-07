@@ -1,0 +1,59 @@
+@import 'variables';
+
+.modal-backdrop.in {
+    opacity: .2;
+}
+
+div[id^=confirm-modal] {
+    background-color: rgba(0,0,0,.2);
+}
+
+.modal-dialog {
+    padding-top: 5vh;
+    .modal-content {
+        border: 1px solid #d2dee8;
+        border-radius: 0;
+        .modal-header {
+            padding-bottom: 10px;
+            border-bottom: 0 solid transparent;
+            h5 {
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+            .close {
+                color: #d2dee8;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .modal-body {
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 60vh;
+            padding-top: 5px;
+            padding-bottom: 0;
+        }
+        .modal-footer {
+            border-top: 0 solid transparent;
+            padding-top: 8px;
+            .btn {
+                background: transparent! important;
+                border: 0 solid transparent;
+                color: $darkgrey !important;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 12px;
+                padding: 6px 12px;
+                &:hover {
+                    background: #d2dee8 !important;
+                }
+                &:active,
+                &:focus {
+                    outline: none !important;
+                    border: 0 solid transparent !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="grid">
+        <div class="grid-item col-md-3 col-sm-4 col-xs-6">
+            <button data-toggle="modal" data-target="#modal-new-email-template">
+                <h5><%= t('new_email_template') %></h5>
+                <p><%= t('new_email_template_description') %></p>
+                <span><%= t('continue') %></span>
+            </button>
+        </div>
+        <% @email_templates.each do |email_template| %>
+            <%= link_to edit_admin_email_template_path(email_template) do %>
+                <div class="grid-item col-md-3 col-sm-4 col-xs-6">
+                    <div class="panel panel-default">
+                        <div class="panel-header">
+                            <h3>
+                                <%= email_template.title.truncate(27) %>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <%= image_tag(email_template.snapshot) %>
+                        </div>
+                        <div class="panel-footer">
+                            <ul class="clearfix">
+                                <li class="pull-left">
+                                    <%= link_to material_icon.delete, email_template, class: 'btn btn-darkpurple ajax-delete', method: :delete, data: {confirm: t('confirm_destroy', title: email_template.title, controller_name: t('email_template'))} %>
+                                </li>
+                                <li class="pull-right">
+                                    <%= link_to material_icon.border_color, edit_admin_email_template_path(email_template), class: 'btn btn-blue' %>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<%= render 'new' %>

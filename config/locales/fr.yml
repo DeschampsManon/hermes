@@ -1,0 +1,50 @@
+fr:
+    helpers:
+        submit:
+            user:
+                create: créer un utilisateur
+                update: modifier l'utilisateur
+                submit: modifier mon mot de passe
+    activerecord:
+        attributes:
+            user:
+                username: Identifiant
+                first_name: Prénom
+                last_name: Nom
+                roles: Rôle
+                email: Email
+                phone: Téléphone
+                address: Adresse
+                city: Ville
+                zip_code: Code Postal
+                locale: Langue
+                current_password: Mot de passe actuel
+                password: Nouveau mot de passe
+                password_confirmation: Confirmation du mot de passe
+    new_email_template: Nouveau template
+    continue: Continuer
+    new_email_template_description: Ut salis sit veteribus enim sint ferunt ferunt esse ea salis edendos suavissima autem solemus
+    new_stored_image_description: Selectionnez une image ou cliquez sur 'continuer'
+    email_template: le template
+    confirm_destroy: Êtes vous sûr de vouloir supprimer %{controller_name} '%{title}'
+    confirm: confirmer
+    english: Anglais
+    french: Français
+    import: Importer
+    gallery: Bibliothèque
+    image: Image
+    cancel: Abandonner
+    import_image: Télécharger une image
+    create_stored_image: Télécharger l'image
+    select_image: Selectionner l'image
+    alt: Text alternatif
+    title: Titre
+    stored_image: l'image
+    update_stored_image: Modifier l'image
+    entries: entrées
+    all: tous
+    new_user: Ajouter un utilisateur
+    role:
+        admin: Administrateur
+        contributor: Contributeur
+    edit_user: Modifier le compte de l'utilisateur '%{username}'

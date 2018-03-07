@@ -1,0 +1,35 @@
+@import 'variables';
+
+.table-primary {
+    width: 100%;
+    position: relative;
+    thead {
+        tr {
+            th {
+                padding: 15px 12px;
+            }
+        }
+    }
+    tbody {
+        tr {
+            background-color: #fff;
+            td {
+                padding: 6px 12px;
+                .table-thumbnail {
+                    display:flex;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    img {
+                        width: 50px;
+                        float: left;
+                        margin: 0;
+                    }
+                    span {
+                        float: left;
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<div id="modal-new-stored-image" class="modal modal-primary fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <%= render 'admin/stored_images/form', action: Admin::StoredImage.new, title: t('import_image'), submit_text: t('create_stored_image') %>
+        </div>
+    </div>
+</div>

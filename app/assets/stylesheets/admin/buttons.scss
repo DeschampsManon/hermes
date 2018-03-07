@@ -1,0 +1,50 @@
+@import 'variables';
+
+.btn {
+    color: #fff;
+    border-radius: 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    &:hover,
+    &:active,
+    &:focus {
+        outline: none;
+        color: #fff;
+    }
+    &.btn-new {
+        font-size: 12px;
+        padding: 7.5px 12px;
+        position: absolute;
+    }
+    &.btn-blue {
+        background-color: $blue;
+        &:hover {
+            background-color: #0a8dea;
+        }
+    }
+    &.btn-darkgrey {
+        background-color: $darkgrey;
+        &:hover {
+            background-color: #12243b;
+        }
+    }
+    &.btn-darkpurple {
+        background-color: rgb(43,43,105);
+        &:hover {
+            background-color: $darkpurple;
+        }
+    }
+    &.btn-grey {
+        background-color: #a2b9ca;
+        &:hover {
+            background-color: #486d8a;
+        }
+    }
+    i {
+        font-size: 13px;
+        width: inherit;
+        height: inherit;
+        line-height: inherit;
+        display: block;
+    }
+}

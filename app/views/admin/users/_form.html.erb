@@ -1,0 +1,59 @@
+<%= render 'admin/stored_images/index' %>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <%= form_for @user, url: {action: @user.new_record? ? 'create' : 'update'}, html: {class: 'form-primary form-validation', id: 'users-form'} do |f| %>
+            <div class="row">
+                <div class="user-avatar-container">
+                    <div>
+                        <%= image_tag @user.avatar(:small), onerror:"this.onerror=null;this.src='#{image_url('admin/no_avatar.png')}';" %>
+                    </div>
+                    <button type="button" data-toggle="modal" data-target="#modal-stored-images" data-turbolinks="false" }>
+                        <%= material_icon.add %>
+                    </button>
+                </div>
+                <div>
+                    <h2><%= title %></h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <%= f.label :username, class: 'required' %>
+                            <%= f.text_field :username, class: 'form-control', required: true %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= f.label :first_name %>
+                            <%= f.text_field :first_name, class: 'form-control' %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= f.label :last_name %>
+                            <%= f.text_field :last_name, class: 'form-control' %>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <%= f.label :email, class: 'required' %>
+                            <%= f.text_field :email, class: 'form-control', required: true %>
+                        </div>
+                        <div class="col-md-6">
+                            <%= f.label :roles, class: 'required' %>
+                            <%= f.select :roles, options_from_collection_for_select(Role.all, :name, :translated_name, (Role.find_by(name: @user.roles[0].name.to_s).name.to_s if @user.persisted?) ) , {}, class: 'form-control select2' %>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <%= f.label :phone %>
+                            <%= f.text_field :phone, class: 'form-control' %>
+                        </div>
+                        <div class="col-md-6">
+                            <%= f.label :locale %>
+                            <%= f.select :locale, User::LOCALES.map{|x| [x[:name], x[:id]]}, {}, class: 'form-control select2' %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-footer pull-right">
+                <%= link_to material_icon.arrow_back, admin_users_path, class: 'btn btn-grey', data: { turbolinks: false } %>
+                <%= link_to material_icon.delete, @user, class: 'btn btn-darkpurple', method: :delete, data: {confirm: t('confirm_destroy', title: @user.username, controller_name: t('user'))} if @user.persisted? && current_user != @user %>
+                <%= f.submit class: 'btn btn-blue' %>
+            </div>
+        <% end %>
+    </div>
+</div>

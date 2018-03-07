@@ -1,0 +1,25 @@
+<div id="modal-new-email-template" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <%= form_for @email_template, html: { class: '' } do |f| %>
+                <%= f.hidden_field :source, id: 'editor-source' %>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <%= f.label :title, class: 'required' %>
+                            <%= f.text_field :title, class: 'form-control' %>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    <%= f.submit t('create_template', default: 'create template'), class: 'btn', data: {source: default_email_template_source_admin_email_templates_path} %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

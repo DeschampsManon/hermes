@@ -1,0 +1,95 @@
+@import 'variables';
+
+body {
+    font-family: 'Roboto';
+    color: $lightgrey;
+    background-color: #F2F6F9;
+    padding-top: 80px;
+}
+
+ul,
+ol {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    display: block;
+    text-decoration: none !important;
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: $darkgrey;
+    font-weight: 700;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+p {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.container {
+    max-width: 1280px;
+    width: 90%;
+}
+
+.panel {
+    margin-bottom: 0;
+    border-color: #d2dee8;
+    border-radius: 0;
+}
+
+#main-header {
+    background: $darkpurple;
+    background: -moz-linear-gradient(left, $darkpurple 0%, $lightpurple 100%);
+    background: -webkit-linear-gradient(left, $darkpurple 0%, $lightpurple 100%);
+    background: linear-gradient(to right, $darkpurple 0%, $lightpurple 100%);
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top:0;
+    width: 100%;
+   ul {
+       float:right;
+        > li {
+            float: left;
+            > a {
+                color: #fff;
+                text-transform: uppercase;
+                padding: 15px 15px 8px 15px;
+                font-size: 13px;
+                &:active,
+                &:hover {
+                    background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+                    background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%);
+                    background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%);
+                }
+            }
+        }
+    }
+}

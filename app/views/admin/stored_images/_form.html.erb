@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <h5><%= title %></h5>
+</div>
+<%= form_for action, html: {class: 'form-primary form-validation', multipart: true, remote: true} do |f| %>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <%= f.label :title, t('title'), class: 'required' %>
+                <%= f.text_field :title, class: 'form-control', required: true %>
+            </div>
+            <div class="col-md-6">
+                <%= f.label :alt, t('alt') %>
+                <%= f.text_field :alt, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label class="required"> <%= t('image') %></label>
+                <label for="admin_stored_image_url" class="form-control"></label>
+                <%= f.file_field :url, class: 'hidden', accept: 'image/*', required: true %>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal"><%= t('cancel') %></button>
+        <button type="button" class="btn" data-dismiss="modal" data-toggle="modal" data-target="#modal-stored-images"><%= t('gallery') %></button>
+        <%= f.submit submit_text, class: 'btn' %>
+    </div>
+<% end %>

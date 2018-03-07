@@ -1,0 +1,107 @@
+@import '../variables';
+
+.grid {
+    .grid-item {
+        margin-bottom: 30px;
+        .panel {
+            .panel-header {
+                padding: 15px 20px;
+                position: relative;
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    background-color: #fff;
+                    position: absolute;
+                    right: 22px;
+                    bottom: -5px;
+                    -ms-transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+                h3 {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 13px;
+                }
+            }
+            .panel-body {
+                position: relative;
+                padding: 0;
+                nav {
+                    position: absolute;
+                    display: flex;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgb(213,202,229);
+                    background: -moz-linear-gradient(45deg, rgba(213,202,229,1) 0%, rgba(134,112,165,1) 100%);
+                    background: -webkit-linear-gradient(45deg, rgba(213,202,229,.2) 0%,rgba(134,112,165,.2) 100%);
+                    background: linear-gradient(45deg, rgba(213,202,229,.4) 0%,rgba(134,112,165,.4) 100%);
+                    ul {
+                        margin: auto;
+                        li {
+                            float: left;
+                            padding: 2.5px;
+                        }
+                    }
+                }
+            }
+            .panel-footer {
+                padding: 10px 8px;
+                background-color: #fff;
+            }
+        }
+        [data-target='#modal-new-email-template'],
+        [data-target='#modal-new-stored-image'] {
+            width: 100%;
+            background: rgb(43,43,105);
+            background: -moz-linear-gradient(top, rgba(43,43,105,1) 1%, rgba(89,71,151,1) 100%);
+            background: -webkit-linear-gradient(top, rgba(43,43,105,1) 1%,rgba(89,71,151,1) 100%);
+            background: linear-gradient(to bottom, rgba(43,43,105,1) 1%,rgba(89,71,151,1) 100%);
+            color: #fff;
+            padding: 30px 15px;
+            border-radius: 0;
+            &:hover,
+            &:focus,
+            &:active {
+                outline: none;
+                span {
+                    background-color: #2f1d6b;
+                }
+            }
+            h5 {
+                color: #fff;
+                font-size: 18px;
+                padding-bottom: 10px;
+            }
+            span {
+                background-color: #5E4D9B;
+                padding: 15px 25px;
+                display: block;
+                font-size: 13px;
+                border-radius: 4px;
+                margin-top: 35px;
+                -moz-box-shadow: -5px 0px 10px 0px #503A8F;
+                -webkit-box-shadow: -5px 0px 10px 0px #503A8F;
+                -o-box-shadow: -5px 0px 10px 0px #503A8F;
+                box-shadow: -5px 0px 10px 0px #503A8F;
+                text-transform: uppercase;
+            }
+        }
+        [data-target='#modal-new-stored-image'] {
+            h5 {
+                font-size: 14px;
+            }
+            p {
+                font-size: 12px;
+            }
+            span {
+                font-size: 12px;
+                margin-top: 15px;
+            }
+        }
+    }
+}

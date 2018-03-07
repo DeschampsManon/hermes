@@ -1,0 +1,50 @@
+<div id="modal-stored-images" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5><%= t('gallery') %></h5>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div>
+
+                    </div>
+                </div>
+                <div class="grid row">
+                    <div class="grid-item col-md-3">
+                        <button data-dismiss="modal" data-toggle="modal" data-target="#modal-new-stored-image">
+                            <h5><%= t('import_image') %></h5>
+                            <p><%= t('new_stored_image_description') %></p>
+                            <span><%= t('continue') %></span>
+                        </button>
+                     </div>
+                    <% Admin::StoredImage.all.each do |image| %>
+                        <div class="grid-item col-md-3">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <%= image_tag(image.url) %>
+                                    <nav>
+                                        <ul>
+                                            <li>
+                                                <%= link_to material_icon.delete, image, class: 'btn btn-darkpurple', method: :delete, data: {confirm: t('confirm_destroy', title: image.title, controller_name: t('stored_images'))} %>
+                                            </li>
+                                            <li>
+                                                <%= link_to material_icon.mode_edit, '#!', class: 'btn btn-blue' %>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal"><%= t('cancel') %></button>
+                <button type="button" class="btn"><%= t('select_image') %></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= render 'admin/stored_images/new' %>

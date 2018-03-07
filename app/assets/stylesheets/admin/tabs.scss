@@ -1,0 +1,55 @@
+@import 'variables';
+
+.nav-tabs-primary {
+    margin: 0 -15px;
+    > ul {
+        width: 100px;
+        float: left;
+        padding: 0 15px;
+        border-bottom: 0 solid transparent;
+        li {
+            float: none;
+            &.active {
+                button {
+                    background-color: $blue;
+                    border-color: $border-blue;
+                    i {
+                        color: #000;
+                        text-shadow: 0 1px 0 #fff;
+                        opacity: .2;
+                    }
+                    &:hover {
+                        i {
+                            opacity: .5;
+                        }
+                    }
+                }
+            }
+            button {
+                width: 100%;
+                background-color: transparent;
+                border-color: transparent;
+                border-radius: 0;
+                i {
+                    width: inherit;
+                    height: inherit;
+                    line-height: inherit;
+                }
+                &:hover {
+                    color: $blue;
+                }
+                &:active,
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+    .tab-content {
+        width: calc(100% - 100px);
+        width: -webkit-calc(100% - 100px);
+        width: -moz-calc(100% - 100px);
+        float: left;
+        padding: 0 15px;
+    }
+}

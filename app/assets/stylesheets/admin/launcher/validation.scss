@@ -1,0 +1,46 @@
+@import '../variables';
+
+.form-error-container {
+    position: relative;
+    &:after {
+        font-family: $materialFontFamily;
+        content: 'close';
+        color: $blue;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 34px;
+        height: 34px;
+        text-align: center;
+        font-size: 18px;
+        padding: 5px 0;
+    }
+    .error {
+        background: $blue;
+        position: absolute;
+        position: absolute;
+        right: 4px;
+        bottom: -25px;
+        width: 75%;
+        color: #fff;
+        font-size: 12px;
+        padding: 6px 12px;
+        text-transform: uppercase;
+        webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        border: 1px solid $border-blue;
+        &:after {
+            content: '';
+            display: block;
+            width: 12px;
+            height: 12px;
+            background-color: $blue;
+            position: absolute;
+            right: 7px;
+            top: -5px;
+            -ms-transform-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+}

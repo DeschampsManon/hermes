@@ -1,0 +1,23 @@
+@import 'variables';
+
+#editor {
+    article {
+        height: calc(100vh - 40px);
+        height: -webkit-calc(100vh - 40px);
+        height: -moz-calc(100vh - 40px);
+        &:first-child {
+            width: calc(100% - 545px);
+            width: -webkit-calc(100% - 545px);
+            width: -moz-calc(100% - 545px);
+            float: left;
+        }
+        &:last-child {
+            width: 545px;
+            float: left;
+        }
+    }
+    #editor-preview {
+        width: 100%;
+        height: 100%;
+    }
+}

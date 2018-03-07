@@ -1,0 +1,7 @@
+<%= form_for @email_template, html: {class: ''}  do |f| %>
+    <%= f.hidden_field :source, id: 'editor-source' %>
+    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.submit nil %>
+<% end %>
+
+<%= render 'admin/stored_images/new' %>
