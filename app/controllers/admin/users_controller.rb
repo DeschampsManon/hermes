@@ -1,5 +1,5 @@
 class Admin::UsersController < AdminController
-  before_action :set_admin_user
+  before_action :set_admin_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -38,6 +38,15 @@ class Admin::UsersController < AdminController
     end
   end
 
+  def destroy
+    if @user.destroy
+      flash.now[:notice] = 'successfully_destroyed'
+      format.html { redirect_to admin_users_url }
+    else
+      format.html { render :index }
+    end
+  end
+
   private
 
     def set_admin_user
@@ -47,12 +56,12 @@ class Admin::UsersController < AdminController
     def user_params
       params.require(:user).permit(
               :email,
+              :username,
               :first_name,
               :last_name,
               :avatar,
               :phone,
               :locale,
-              :username
       )
     end
 end

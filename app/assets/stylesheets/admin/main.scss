@@ -4,7 +4,10 @@ body {
     font-family: 'Roboto';
     color: $lightgrey;
     background-color: #F2F6F9;
-    padding-top: 80px;
+    padding-top: 53px;
+    > .page {
+        padding: 20px 0;
+    }
 }
 
 ul,
@@ -54,8 +57,14 @@ p {
 }
 
 .container {
-    max-width: 1280px;
-    width: 90%;
+    width: 100%;
+}
+
+.page {
+    width: calc(100% - 80px);
+    width: -webkit-calc(100% - 80px);
+    width: -moz-calc(100% - 80px);
+    float: right;
 }
 
 .panel {
@@ -66,29 +75,66 @@ p {
 
 #main-header {
     background: $darkpurple;
-    background: -moz-linear-gradient(left, $darkpurple 0%, $lightpurple 100%);
-    background: -webkit-linear-gradient(left, $darkpurple 0%, $lightpurple 100%);
-    background: linear-gradient(to right, $darkpurple 0%, $lightpurple 100%);
+    background: -moz-linear-gradient(top, $darkpurple 0%, $lightpurple 100%);
+    background: -webkit-linear-gradient(top, $darkpurple 0%, $lightpurple 100%);
+    background: linear-gradient(to top, $darkpurple 0%, $lightpurple 100%);
     position: fixed;
-    z-index: 1000;
+    z-index: 1500;
     left: 0;
     top:0;
-    width: 100%;
-   ul {
-       float:right;
+    width: 80px;
+    height: 100vh;
+    ul {
+       padding: 8px;
         > li {
-            float: left;
             > a {
+                padding: 8px;
+                text-shadow: 0 1px 0 #000;
                 color: #fff;
-                text-transform: uppercase;
-                padding: 15px 15px 8px 15px;
-                font-size: 13px;
-                &:active,
+                opacity: .5;
+                >  i {
+                    display: block;
+                    margin: 0 auto;
+                }
                 &:hover {
                     background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
                     background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%);
                     background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%);
                 }
+            }
+        }
+    }
+}
+
+#page-header {
+    background-color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    width: 100%;
+    -webkit-box-shadow: 0px 10px 25px -6px rgba(210,222,232,.6);
+    -moz-box-shadow: 0px 10px 25px -6px rgba(210,222,232,.6);
+    box-shadow: 0px 10px 25px -6px rgba(210,222,232,.6);
+    border-bottom: 1px solid $border-ligthrey;
+    #dropdown-current-user {
+        > button {
+            -webkit-appearance: none;
+            background: transparent;
+            border: 0 solid transparent;
+            display: flex;
+            > img {
+                width: 30px;
+                float: left;
+                margin: auto 0 ;
+            }
+            > p {
+                float: left;
+                margin: auto 0;
+                font-size: 14px;
+                font-weight: 700;
+                padding-left: 8px;
             }
         }
     }

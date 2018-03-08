@@ -1,0 +1,25 @@
+<header id="page-header" class="clearfix">
+    <div class="page">
+        <div class="container">
+            <ul id="dropdown-current-user" class="dropdown pull-right">
+                <button class="dropdown-toggle" data-toggle="dropdown">
+                    <%= image_tag current_user.avatar(:small), onerror:"this.onerror=null;this.src='#{image_url('admin/no_avatar.png')}';" %>
+                    <p><%= current_user.username %></p>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-header">
+                        <%= image_tag current_user.avatar(:small), onerror:"this.onerror=null;this.src='#{image_url('admin/no_avatar.png')}';" %>
+                        <%= current_user.email %>
+                    </div>
+                    <div class="dropdown-body">
+                        <li><%= link_to t('edit_my_profile'), edit_admin_user_path(current_user) %></li>
+                        <li><%= link_to t('change_my_password'), edit_admin_user_path(current_user) %></li>
+                    </div>
+                    <div class="dropdown-footer">
+                        <%= link_to t('logout'), destroy_user_session_path, method: :delete, class: 'btn btn-blue btn-block' %>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</header>

@@ -1,14 +1,13 @@
 class UserMailer < ApplicationMailer
-    layout 'welcome_mailer'
+    layout 'admin/mailers/welcome'
 
     def welcome(user_id, password)
         @user = User.find(user_id)
         @password = password
         mail(
             to: @user.email,
-            from: '',
+            from: 'hermes@mailer.co',
             subject: t('welcome_user', user: @user.username)
         )
     end
-
 end

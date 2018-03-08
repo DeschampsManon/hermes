@@ -9,6 +9,9 @@
     </head>
     <body data-locale='<%= I18n.locale %>' class="<%= "#{controller_name}-#{action_name}" %>">
         <%= render 'layouts/admin/main_header' %>
-        <%= yield %>
+        <%= render 'layouts/admin/page_header' %>
+        <div class="page">
+            <%= yield %>
+        </div>
     </body>
 </html>

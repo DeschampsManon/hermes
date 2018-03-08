@@ -1,15 +1,14 @@
 <header id="main-header" class="clearfix">
-    <div class="container">
-        <ul>
-            <li>
-                <%= link_to t('users'), admin_users_path %>
-            </li>
-            <li>
-                <%= link_to t('email_templates'), admin_email_templates_path %>
-            </li>
-            <li>
-                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-            </li>
-        </ul>
-    </div>
+    <ul>
+        <li>
+            <%= link_to admin_email_templates_path do %>
+                <%= material_icon.email %>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to admin_users_path do %>
+                <%= material_icon.people %>
+            <% end %>
+        </li>
+    </ul>
 </header>

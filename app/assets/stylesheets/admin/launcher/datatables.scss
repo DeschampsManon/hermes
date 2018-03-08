@@ -47,15 +47,85 @@
     }
     .dataTables_paginate {
         float: right;
+        padding-top: 8px;
         > a {
-            float: left;
-            color: $lightgrey;
+            > i {
+                height: initial;
+                width: inherit;
+                font-size: 15px;
+                padding: 5px;
+            }
         }
         > span {
+            a {
+                padding: 5px 8px 3px 8px;
+                font-size: 12px;
+            }
+        }
+        .paginate_button {
+            cursor: pointer;
             float: left;
+            color: $lightgrey;
+            margin: 0 2px;
+            border-radius: 1px;
+            &.current {
+                color: #fff;
+                background-color: $darkpurple;
+                &:hover {
+                    background-color: $darkpurple;
+                }
+            }
+            &:hover {
+                background-color: rgba(2, 15, 55, .1);
+            }
         }
     }
     .datatable {
         clear: both;
+        thead {
+            tr {
+                th {
+                    cursor: pointer;
+                    position:relative;
+                    &:active,
+                    &:focus {
+                        outline: none;
+                    }
+                    &.no-sorting {
+                        &:after,
+                        &:before {
+                            display: none;
+                        }
+                    }
+                    &.sorting_asc {
+                        &:before {
+                            opacity: 1;
+                        }
+
+                    }
+                    &.sorting_desc {
+                        &:after {
+                            opacity: 1;
+                        }
+
+                    }
+                    &:after,
+                    &:before {
+                        font-family: $materialFontFamily;
+                        position: absolute;
+                        right: 12px;
+                        opacity: .3;
+                    }
+                    &:before {
+                        content: 'arrow_drop_up';
+                        top: 12px;
+                    }
+                    &:after {
+                        content: 'arrow_drop_down';
+                        top: 18px;
+                    }
+                }
+            }
+        }
     }
 }

@@ -44,7 +44,7 @@
                         </div>
                         <div class="col-md-6">
                             <%= f.label :locale %>
-                            <%= f.select :locale, User::LOCALES.map{|x| [x[:name], x[:id]]}, {}, class: 'form-control select2' %>
+                            <%= f.select :locale, User.locales.map{|key, value| [value[:name], key]}, {}, class: 'form-control select2' %>
                         </div>
                     </div>
                 </div>

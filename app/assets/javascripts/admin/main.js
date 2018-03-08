@@ -2,7 +2,13 @@ function change_avatar_source() {
     var authorized_image_format = ['gif', 'png', 'jpeg', 'jpg'];
     var $input = $(this);
     var input_file_extension = $input[0].files[0].name.substring($input[0].files[0].name.lastIndexOf('.') + 1).toLowerCase();
-
+    if ($input[0].files && $input[0].files[0] && $.inArray(input_file_extension, authorized_image_format) >= 0) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('.user-avatar-container img').attr('src', e.target.result);
+        };
+        reader.readAsDataURL($input[0].files[0]);
+    }
     $('label[for=' + $input.attr('id') + ']').html($input.val());
 }
 

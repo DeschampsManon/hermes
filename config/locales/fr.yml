@@ -44,7 +44,15 @@ fr:
     entries: entrées
     all: tous
     new_user: Ajouter un utilisateur
+    welcome_user: Bienvenue %{user}
+    users: Utilisateurs
+    email_templates: Mailing
     role:
         admin: Administrateur
         contributor: Contributeur
-    edit_user: Modifier le compte de l'utilisateur '%{username}'
+    edit_user: Modifier le compte de %{username}
+    username: Identifiant
+    name: Nom
+    email: Email
+    roles: Rôles
+    actions: Actions

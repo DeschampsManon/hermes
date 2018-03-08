@@ -750,8 +750,6 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    rubocop-rspec (1.24.0)
-      rubocop (>= 0.53.0)
     ruby-progressbar (1.9.0)
     sass (3.5.5)
       sass-listen (~> 4.0.0)
@@ -851,7 +849,6 @@ DEPENDENCIES
   rails (~> 5.0.4)
   rolify
   rubocop
-  rubocop-rspec
   sass-rails (~> 5.0)
   select2-rails
   spring
