@@ -17,6 +17,7 @@ label.form-control {
     &:active {
         outline: none;
         border-color: $darkpurple;
+        box-shadow: none;
     }
 }
 

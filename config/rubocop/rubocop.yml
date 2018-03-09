@@ -1,236 +1,98 @@
 require: rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 2.3
   Exclude:
-    - 'db/*.rb'
-    - 'db_boa/*.rb'
-    - 'app/assets/javascripts/rubaxa.sortable.js'
-  DisplayCopNames: true
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+  TargetRubyVersion: 2.1
 
-Style/NumericPredicate:
+Naming/PredicateName:
+  # Method define macros for dynamically generated method.
+  MethodDefinitionMacros:
+    - define_method
+    - define_singleton_method
+    - def_node_matcher
+    - def_node_search
+
+Style/Documentation:
   Enabled: false
 
-Bundler/OrderedGems:
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
+
+Style/FormatStringToken:
+  # Because we parse a lot of source codes from strings. Percent arrays
+  # look like unannotated format string tokens to this cop.
   Exclude:
-    - 'Gemfile'
+    - spec/**/*
 
-Lint/UselessAssignment:
-  Enabled: false
-
-Metrics/AbcSize:
-  Enabled: false
-
-# Configuration parameters: CountComments, ExcludedMethods.
-Metrics/BlockLength:
-  Max: 300
-  Exclude:
-    - 'db/schema.rb'
-    - 'db_boa/schema.rb'
-
-# Configuration parameters: CountComments.
-Metrics/ClassLength:
-  Max: 1000
-
-Metrics/ModuleLength:
-  Max: 1000
-
-Metrics/CyclomaticComplexity:
-  Max: 20
-
-# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-# URISchemes: http, https
-Metrics/LineLength:
-  Max: 150
-
-# Configuration parameters: CountComments.
-Metrics/MethodLength:
-  Max: 500
-
-Metrics/PerceivedComplexity:
-  Max: 15
-
-Metrics/BlockNesting:
-  Max: 5
-
-Metrics/ParameterLists:
-  Max: 6
-
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
-# SupportedStyles: outdent, indent
-Style/AccessModifierIndentation:
-  IndentationWidth: 4
-  Exclude:
-    - 'db/schema.rb'
-    - 'db_boa/schema.rb'
-
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: nested, compact
 Style/ClassAndModuleChildren:
   SupportedStyles:
     - compact
     - nested
   EnforcedStyle: compact
 
-Style/Documentation:
-  Enabled: false
+Layout/EndOfLine:
+  EnforcedStyle: lf
 
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: empty_lines, empty_lines_except_namespace, empty_lines_special, no_empty_lines
-Style/EmptyLinesAroundClassBody:
-  Enabled: false
-
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: compact, expanded
-Style/EmptyMethod:
-  EnforcedStyle: expanded
-
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
-# SupportedStyles: consistent, special_for_inner_method_call, special_for_inner_method_call_in_parentheses
-Style/FirstParameterIndentation:
-  IndentationWidth: 4
-  Exclude:
-    - 'db/schema.rb'
-    - 'db_boa/schema.rb'
-
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
-# SupportedStyles: special_inside_parentheses, consistent, align_brackets
-Style/IndentArray:
-  IndentationWidth: 4
-  Exclude:
-    - 'db/schema.rb'
-    - 'db_boa/schema.rb'
-
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
-# SupportedStyles: special_inside_parentheses, consistent, align_braces
-Style/IndentHash:
-    IndentationWidth: 4
-    Exclude:
-      - 'db/schema.rb'
-      - 'db_boa/schema.rb'
-
-# Cop supports --auto-correct.
-# Configuration parameters: Width.
-Style/IndentationWidth:
-    Width: 4
-    Exclude:
-      - 'db/schema.rb'
-      - 'db_boa/schema.rb'
-
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
-# SupportedStyles: aligned, indented
-Style/MultilineOperationIndentation:
-    EnforcedStyle: indented
-    IndentationWidth: 4
-    Exclude:
-      - 'db/schema.rb'
-      - 'db_boa/schema.rb'
-
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: space, no_space
-Style/SpaceAroundEqualsInParameterDefault:
-  EnforcedStyle: space
-
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, EnforcedStyleForEmptyBraces, SupportedStylesForEmptyBraces, SpaceBeforeBlockParameters.
-# SupportedStyles: space, no_space
-# SupportedStylesForEmptyBraces: space, no_space
-Style/SpaceInsideBlockBraces:
-  EnforcedStyle: space
-
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, EnforcedStyleForEmptyBraces, SupportedStylesForEmptyBraces.
-# SupportedStyles: space, no_space, compact
-# SupportedStylesForEmptyBraces: space, no_space
-Style/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: space
-  EnforcedStyleForEmptyBraces: no_space
-
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  EnforcedStyle: single_quotes
-  Exclude:
-    - 'db/schema.rb'
-    - 'db_boa/schema.rb'
-
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: final_newline, final_blank_line
-Style/TrailingBlankLines:
+Layout/ClassStructure:
   Enabled: true
+  Categories:
+    module_inclusion:
+      - include
+      - prepend
+      - extend
+  ExpectedOrder:
+      - module_inclusion
+      - constants
+      - public_class_methods
+      - initializer
+      - instance_methods
+      - protected_methods
+      - private_methods
 
-# Cop supports --auto-correct.
-# Configuration parameters: SupportedStyles, WordRegex.
-# SupportedStyles: percent, brackets
-Style/WordArray:
-  EnforcedStyle: percent
-  MinSize: -Infinity
+Layout/IndentHeredoc:
+  EnforcedStyle: powerpack
+
+Lint/AmbiguousBlockAssociation:
   Exclude:
-    - 'db/schema.rb'
-    - 'db_boa/schema.rb'
+    - 'spec/**/*.rb'
 
-Style/MultilineBlockChain:
+Lint/InterpolationCheck:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Lint/UselessAccessModifier:
+  MethodCreatingMethods:
+    - 'def_matcher'
+    - 'def_node_matcher'
+
+Lint/BooleanSymbol:
   Enabled: false
 
-Style/NumericLiterals:
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/BlockLength:
   Exclude:
-    - 'db/schema.rb'
-    - 'db_boa/schema.rb'
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
 
-FrozenStringLiteralComment:
+Metrics/ModuleLength:
   Exclude:
-    - 'db/schema.rb'
-    - 'db_boa/schema.rb'
+    - 'spec/**/*.rb'
 
-Style/EmptyLinesAroundBlockBody:
+Metrics/AbcSize:
+  Enabled: false
+
+Performance/Caller:
   Exclude:
-    - 'db/schema.rb'
-    - 'db_boa/schema.rb'
+    - spec/rubocop/cop/performance/caller_spec.rb
 
-Style/IndentationConsistency:
-  Exclude:
-    - 'db/schema.rb'
-    - 'db_boa/schema.rb'
+RSpec/PredicateMatcher:
+  EnforcedStyle: explicit
 
-Style/CommentIndentation:
-  Exclude:
-    - 'db/schema.rb'
-    - 'db_boa/schema.rb'
-
-Style/ExtraSpacing:
-  Exclude:
-    - 'db/schema.rb'
-    - 'db_boa/schema.rb'
-
-RSpec/DescribeClass:
-  Exclude:
-    - 'spec/views'
-
-RSpec/ExampleLength:
-    Max: 500
-
-RSpec/MultipleExpectations:
-    Max: 20
-
-RSpec/AnyInstance:
-    Enabled: False
-
-RSpec/DescribeClass:
-    Exclude:
-      - 'spec/views/**/*'
-
-RSpec/RepeatedExample:
-    Enabled: false
-
-RescueWithoutErrorClass:
-    Enabled: false
+RSpec/NestedGroups:
+  Max: 7

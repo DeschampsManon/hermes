@@ -1,5 +1,11 @@
+# frozen_string_literal: true
+
 class Admin::UsersController < AdminController
-  before_action :set_admin_user, only: [:show, :edit, :update, :destroy, :edit_password]
+  before_action :set_admin_user, only: %i[show
+                                          edit
+                                          update
+                                          destroy
+                                          edit_password]
 
   def index
     @users = User.all
@@ -16,10 +22,16 @@ class Admin::UsersController < AdminController
       @user.password = generated_password
       @user.add_role params[:user][:roles]
       if @user.save
-        UserMailer.welcome(@user, generated_password).deliver
-        flash.now[:notice] = 'successfully_created'
+        UserMailer.welcome_email(@user, generated_password).deliver
+        flash[:success] = I18n.t('successfully_created',
+                                 title: @user.username,
+                                 controller_name: I18n.t('user'),
+                                 flash_title: I18n.t('flash_title_created'))
         format.html { redirect_to admin_users_url }
       else
+        flash[:error] = I18n.t('unsuccessfully_created',
+                               errors: @user.errors.messages[:name][0],
+                               flash_title: I18n.t('be_careful'))
         format.html { render :new }
       end
     end
@@ -30,12 +42,18 @@ class Admin::UsersController < AdminController
       @user.roles = []
       @user.add_role params[:user][:roles]
       if @user.update(user_params)
-         flash[:success] = I18n.t('successfully_updated',
-                                     title: @user.username,
-                                     controller_name: I18n.t('user'),
-                                     flash_title: I18n.t('flash_title_updated'))
+        flash[:success] = I18n.t('successfully_updated',
+                                 title: @user.username,
+                                 controller_name: I18n.t('user'),
+                                 flash_title: I18n.t('flash_title_updated'))
         format.html { redirect_to admin_users_url }
       else
+        flash[:error] = []
+        @user.errors.each do |attribute, error|
+          flash[:error] << I18n.t('unsuccessfully_updated',
+                                  errors: error,
+                                  flash_title: I18n.t(attribute))
+        end
         format.html { render :edit }
       end
     end
@@ -55,8 +73,7 @@ class Admin::UsersController < AdminController
     end
   end
 
-  def edit_password
-  end
+  def edit_password; end
 
   def update_password
     @user = current_user
@@ -66,7 +83,7 @@ class Admin::UsersController < AdminController
         flash[:success] = I18n.t('successfully_updated',
                                  title: '',
                                  controller_name: I18n.t('your_password'),
-                                 flash_title: I18n.t('flash_title_password_updated'))
+                                 flash_title: I18n.t('flash_title_password'))
         format.html { redirect_to admin_home_index_url }
       else
         format.html { render :edit_password }
@@ -76,19 +93,19 @@ class Admin::UsersController < AdminController
 
   private
 
-    def set_admin_user
-      @user = User.find(params[:id])
-    end
+  def set_admin_user
+    @user = User.find(params[:id])
+  end
 
-    def user_params
-      params.require(:user).permit(
-              :email,
-              :username,
-              :first_name,
-              :last_name,
-              :avatar,
-              :phone,
-              :locale,
-      )
-    end
+  def user_params
+    params.require(:user).permit(
+      :email,
+      :username,
+      :first_name,
+      :last_name,
+      :avatar,
+      :phone,
+      :locale
+    )
+  end
 end

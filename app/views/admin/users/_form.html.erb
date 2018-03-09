@@ -50,8 +50,8 @@
                 </div>
             </div>
             <div class="form-footer pull-right">
-                <%= link_to material_icon.arrow_back, admin_users_path, class: 'btn btn-grey', data: { turbolinks: false } %>
-                <%= link_to material_icon.delete, @user, class: 'btn btn-darkpurple', method: :delete, data: {confirm: t('confirm_destroy', title: @user.username, controller_name: t('user'))} if @user.persisted? && current_user != @user %>
+                <%= link_to material_icon.arrow_back, admin_users_url, class: 'btn btn-grey', data: { turbolinks: false } %>
+                <%= link_to material_icon.delete, admin_user_url(@user), class: 'btn btn-darkpurple', method: :delete, data: {confirm: t('confirm_destroy', title: @user.username, controller_name: t('user'))} if @user.persisted? && current_user != @user %>
                 <%= f.submit class: 'btn btn-blue' %>
             </div>
         <% end %>
