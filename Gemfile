@@ -64,6 +64,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rubocop'
   gem 'rubocop-rspec'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-commands-rspec'
+  gem 'spring-commands-rubocop'
 end
 
 group :development do
