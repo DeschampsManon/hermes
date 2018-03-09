@@ -43,10 +43,12 @@ fr:
     update_stored_image: Modifier l'image
     entries: entrées
     all: tous
+    user: l'utilisateur
     new_user: Ajouter un utilisateur
     welcome_user: Bienvenue %{user}
     users: Utilisateurs
     email_templates: Mailing
+    edit_password: Modifier mon mot de passe
     role:
         admin: Administrateur
         contributor: Contributeur
@@ -56,3 +58,5 @@ fr:
     email: Email
     roles: Rôles
     actions: Actions
+    edit_my_profile: Modifier mon profil
+    change_my_password: Modifier mon mot de passe

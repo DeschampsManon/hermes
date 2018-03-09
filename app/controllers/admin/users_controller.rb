@@ -1,5 +1,5 @@
 class Admin::UsersController < AdminController
-  before_action :set_admin_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin_user, only: [:show, :edit, :update, :destroy, :edit_password]
 
   def index
     @users = User.all
@@ -39,11 +39,29 @@ class Admin::UsersController < AdminController
   end
 
   def destroy
-    if @user.destroy
-      flash.now[:notice] = 'successfully_destroyed'
-      format.html { redirect_to admin_users_url }
-    else
-      format.html { render :index }
+    respond_to do |format|
+      if @user.destroy
+        flash.now[:notice] = 'successfully_destroyed'
+        format.html { redirect_to admin_users_url }
+      else
+        format.html { render :index }
+      end
+    end
+  end
+
+  def edit_password
+  end
+
+  def update_password
+    @user = current_user
+    respond_to do |format|
+      if @user.update(user_params)
+        bypass_sign_in(@user)
+        flash.now[:notice] = 'successfully_updated'
+        format.html { redirect_to admin_home_index_url }
+      else
+        format.html { render :edit_password }
+      end
     end
   end
 
