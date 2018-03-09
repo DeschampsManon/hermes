@@ -6,31 +6,35 @@
     "jquery": true
   },
   "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
   "plugins": [
-    "importx"
+    "jquery"
   ],
   "rules": {
     "indent": [
-        "error",
-        4
+      "error",
+      4
     ],
     "linebreak-style": [
-        "error",
-        "unix"
+      "error",
+      "unix"
     ],
     "quotes": [
-        "error",
-        "single"
+      "error",
+      "single"
     ],
     "semi": [
-        "error",
-        "always"
+      "error",
+      "always"
     ],
     "wrap-regex": "error",
     "no-unused-vars": [
-        "error", {
-          "varsIgnorePattern": "[Dd]ummy"
-        }
+      "error", {
+        "varsIgnorePattern": "[Dd]ummy"
+      }
     ],
     "space-infix-ops": [
         "error", {

@@ -24,6 +24,17 @@
 -   repo: git://github.com/pre-commit/mirrors-coffeelint
     sha: 'd1c5a6b5d97fa9d23b38711187dd5827cf43e601'
     hooks:
+    -   id: coffeelint
+        args:
+        - -f
+        - config/coffeelint/coffeelint.json
+-   repo: git://github.com/pre-commit/mirrors-jshint
+    sha: d44c3fcd906b2d2e48908ae4b439ba73ea3c37cd
+    hooks:
+    -   id: jshint
+-   repo: git://github.com/JonLev/mirrors-sass-lint
+    sha: 4523b2c8722e01c49ce4ec23eed2efb0d39054e1
+    hooks:
     -   id: sass-lint
 -   repo: git://github.com/pre-commit/mirrors-eslint
     sha: 'v4.11.0'

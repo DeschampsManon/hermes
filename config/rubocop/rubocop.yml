@@ -1,7 +1,11 @@
+require: rubocop-rspec
+
 AllCops:
   TargetRubyVersion: 2.3
   Exclude:
     - 'db/*.rb'
+    - 'db_boa/*.rb'
+    - 'app/assets/javascripts/rubaxa.sortable.js'
   DisplayCopNames: true
 
 Style/NumericPredicate:
@@ -21,7 +25,8 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Max: 300
   Exclude:
-      - 'db/schema.rb'
+    - 'db/schema.rb'
+    - 'db_boa/schema.rb'
 
 # Configuration parameters: CountComments.
 Metrics/ClassLength:
@@ -31,7 +36,7 @@ Metrics/ModuleLength:
   Max: 1000
 
 Metrics/CyclomaticComplexity:
-  Max: 25
+  Max: 20
 
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
@@ -58,6 +63,7 @@ Style/AccessModifierIndentation:
   IndentationWidth: 4
   Exclude:
     - 'db/schema.rb'
+    - 'db_boa/schema.rb'
 
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: nested, compact
@@ -89,6 +95,7 @@ Style/FirstParameterIndentation:
   IndentationWidth: 4
   Exclude:
     - 'db/schema.rb'
+    - 'db_boa/schema.rb'
 
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
@@ -97,6 +104,7 @@ Style/IndentArray:
   IndentationWidth: 4
   Exclude:
     - 'db/schema.rb'
+    - 'db_boa/schema.rb'
 
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
@@ -105,6 +113,7 @@ Style/IndentHash:
     IndentationWidth: 4
     Exclude:
       - 'db/schema.rb'
+      - 'db_boa/schema.rb'
 
 # Cop supports --auto-correct.
 # Configuration parameters: Width.
@@ -112,6 +121,7 @@ Style/IndentationWidth:
     Width: 4
     Exclude:
       - 'db/schema.rb'
+      - 'db_boa/schema.rb'
 
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
@@ -121,6 +131,7 @@ Style/MultilineOperationIndentation:
     IndentationWidth: 4
     Exclude:
       - 'db/schema.rb'
+      - 'db_boa/schema.rb'
 
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
@@ -150,6 +161,7 @@ Style/StringLiterals:
   EnforcedStyle: single_quotes
   Exclude:
     - 'db/schema.rb'
+    - 'db_boa/schema.rb'
 
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
@@ -165,6 +177,7 @@ Style/WordArray:
   MinSize: -Infinity
   Exclude:
     - 'db/schema.rb'
+    - 'db_boa/schema.rb'
 
 Style/MultilineBlockChain:
   Enabled: false
@@ -172,26 +185,32 @@ Style/MultilineBlockChain:
 Style/NumericLiterals:
   Exclude:
     - 'db/schema.rb'
+    - 'db_boa/schema.rb'
 
 FrozenStringLiteralComment:
   Exclude:
     - 'db/schema.rb'
+    - 'db_boa/schema.rb'
 
 Style/EmptyLinesAroundBlockBody:
   Exclude:
     - 'db/schema.rb'
+    - 'db_boa/schema.rb'
 
 Style/IndentationConsistency:
   Exclude:
     - 'db/schema.rb'
+    - 'db_boa/schema.rb'
 
 Style/CommentIndentation:
   Exclude:
     - 'db/schema.rb'
+    - 'db_boa/schema.rb'
 
 Style/ExtraSpacing:
   Exclude:
     - 'db/schema.rb'
+    - 'db_boa/schema.rb'
 
 RSpec/DescribeClass:
   Exclude:
