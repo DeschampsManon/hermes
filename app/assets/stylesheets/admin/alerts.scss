@@ -1,0 +1,63 @@
+@import 'variables';
+
+.alert {
+    position: absolute;
+    width: 350px;
+    z-index: 300;
+    right: 15px;
+    top: 60px;
+    background-color: #fff;
+    border-radius: 0;
+    -webkit-box-shadow: 0px 10px 25px -6px rgba(210,222,232,.6);
+    -moz-box-shadow: 0px 10px 25px -6px rgba(210,222,232,.6);
+    box-shadow: 0px 10px 25px -6px rgba(210,222,232,.6);
+    border-bottom: 1px solid $border-ligthrey;
+    border-top-width: 4px;
+    padding-left: 85px;
+    &.alert-success {
+        border-top-color: $green;
+        .msg-type {
+            span {
+                background: -moz-linear-gradient(top, $green 0%, $darkgreen 100%);
+                background: -webkit-linear-gradient(top, $green 0%, $darkgreen 100%);
+                background: linear-gradient(top, $green 0%, $darkgreen 100%);
+            }
+        }
+        .close {
+            color: $green !important;
+        }
+    }
+    .msg-type {
+        position: absolute;
+        left: -30px;
+        top:0;
+        width: 100px;
+        height: 100%;
+        color: #fff;
+        font-weight: 600;
+        font-size: 11px;
+        display: flex;
+        span {
+            margin: auto;
+            background: blue;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+        }
+    }
+    .close {
+        line-height: .5;
+        font-weight: 400;
+    }
+    > div {
+        h5 {
+            text-transform: uppercase;
+            padding-bottom: 5px;
+        }
+        p {
+            font-size: 12px;
+            color: $lightgrey;
+            width: 92%;
+        }
+    }
+}

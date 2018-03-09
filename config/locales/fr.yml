@@ -27,6 +27,11 @@ fr:
     new_stored_image_description: Selectionnez une image ou cliquez sur 'continuer'
     email_template: le template
     confirm_destroy: Êtes vous sûr de vouloir supprimer %{controller_name} '%{title}'
+    flash_title_updated: mise à jour
+    flash_title_destroyed: supression
+    flash_title_password_updated: modification du mot de passe
+    successfully_updated: "<h5>%{flash_title}</h5> <p>%{controller_name} '%{title}' a été mis(e) à jour avec succès</p>"
+    successfully_destroyed: "<h5>%{flash_title}</h5> <p>%{controller_name} '%{title}' a été supprimé avec succès</p>"
     confirm: confirmer
     english: Anglais
     french: Français
@@ -60,3 +65,5 @@ fr:
     actions: Actions
     edit_my_profile: Modifier mon profil
     change_my_password: Modifier mon mot de passe
+    success: Succès
+    your_password: votre mot de passe

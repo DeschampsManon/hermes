@@ -30,7 +30,10 @@ class Admin::UsersController < AdminController
       @user.roles = []
       @user.add_role params[:user][:roles]
       if @user.update(user_params)
-        flash.now[:notice] = 'successfully_updated'
+         flash[:success] = I18n.t('successfully_updated',
+                                     title: @user.username,
+                                     controller_name: I18n.t('user'),
+                                     flash_title: I18n.t('flash_title_updated'))
         format.html { redirect_to admin_users_url }
       else
         format.html { render :edit }
@@ -41,7 +44,10 @@ class Admin::UsersController < AdminController
   def destroy
     respond_to do |format|
       if @user.destroy
-        flash.now[:notice] = 'successfully_destroyed'
+        flash[:success] = I18n.t('successfully_destroyed',
+                                 title: @user.username,
+                                 controller_name: I18n.t('user'),
+                                 flash_title: I18n.t('flash_title_destroyed'))
         format.html { redirect_to admin_users_url }
       else
         format.html { render :index }
@@ -57,7 +63,10 @@ class Admin::UsersController < AdminController
     respond_to do |format|
       if @user.update(user_params)
         bypass_sign_in(@user)
-        flash.now[:notice] = 'successfully_updated'
+        flash[:success] = I18n.t('successfully_updated',
+                                 title: '',
+                                 controller_name: I18n.t('your_password'),
+                                 flash_title: I18n.t('flash_title_password_updated'))
         format.html { redirect_to admin_home_index_url }
       else
         format.html { render :edit_password }

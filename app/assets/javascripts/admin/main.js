@@ -31,4 +31,5 @@ function ajax_image_upload(e) {
 $(document).on('turbolinks:load', function() {
     $('#admin_stored_image_url').change(change_avatar_source);
     $('#new_admin_stored_image').submit(ajax_image_upload);
+    setTimeout(function(){$('.alert' ).fadeOut(3000);}, 5000);
 });
