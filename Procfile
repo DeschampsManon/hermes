@@ -1,1 +1,4 @@
-backend: bin/rails s
+launch: bash scripts/launch.sh
+
+
+

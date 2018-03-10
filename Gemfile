@@ -59,15 +59,19 @@ gem 'material_icons'
 gem 'i18n-js'
 
 group :development, :test do
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'capybara'
+  gem 'binding_of_caller'
+  gem 'factory_bot_rails'
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'rspec-rails'
   gem 'rubocop'
   gem 'rubocop-rspec'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'spring-commands-rspec'
-  gem 'spring-commands-rubocop'
+  gem 'selenium-webdriver'
+  gem 'shoulda'
 end
 
 group :development do

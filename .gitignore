@@ -7,11 +7,18 @@
 # Ignore bundler config.
 /.bundle
 
-# User-specific stuff:
+# Ignore Rubymine
 .idea
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
+
+# Ignore mac DS_Store
+*.DS_Store
+
+# Ignore VIM swp files
+*.swp
+*.swo
 
 # Ignore all logfiles and tempfiles.
 /log/*
