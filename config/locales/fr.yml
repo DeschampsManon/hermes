@@ -60,7 +60,7 @@ fr:
     update_stored_image: Modifier l'image
     entries: entrées
     all: tous
-    user: l'utilisateur
+    user_controller: l'utilisateur
     new_user: Ajouter un utilisateur
     welcome_user: Bienvenue %{user}
     users: Utilisateurs
@@ -81,3 +81,4 @@ fr:
     your_password: votre mot de passe
     be_careful: Attention
     error: erreur
+    devise_sessions_new: "Connexion"

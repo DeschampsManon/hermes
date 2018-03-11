@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <%= render 'layouts/meta', layout: 'devise', title: "Hermès | #{resource_name.capitalize}" %>
-    </head>
-    <body>
-        <section>
-            <div class="container">
-                <%= yield %>
-            </div>
-        </section>
-    </body>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <%= render 'layouts/meta', layout: 'admin', title: "Hermès | #{t("devise_#{controller_name}_#{action_name}")} " %>
+</head>
+<body data-locale='<%= I18n.locale %>' class="<%= "#{controller_name}-#{action_name}" %>">
+    <div id="flash-alerts-container"><%= devise_flash_messages_helper %></div>
+    <div class="page">
+        <%= yield %>
+    </div>
+</body>
 </html>

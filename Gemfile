@@ -56,6 +56,7 @@ gem 'material_icons'
 
 
 # GLOBALISATION & I18n
+gem 'devise-i18n'
 gem 'i18n-js'
 
 group :development, :test do

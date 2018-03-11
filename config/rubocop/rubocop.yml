@@ -33,6 +33,43 @@ Style/ClassAndModuleChildren:
     - nested
   EnforcedStyle: compact
 
+Style/AccessModifierIndentation:
+  IndentationWidth: 4
+  Exclude:
+    - 'db/schema.rb'
+    - 'db_boa/schema.rb'
+
+Style/FirstParameterIndentation:
+  IndentationWidth: 4
+  Exclude:
+    - 'db/schema.rb'
+    - 'db_boa/schema.rb'
+
+Style/IndentArray:
+  IndentationWidth: 4
+  Exclude:
+    - 'db/schema.rb'
+    - 'db_boa/schema.rb'
+
+Style/IndentHash:
+    IndentationWidth: 4
+    Exclude:
+      - 'db/schema.rb'
+      - 'db_boa/schema.rb'
+
+Style/IndentationWidth:
+    Width: 4
+    Exclude:
+      - 'db/schema.rb'
+      - 'db_boa/schema.rb'
+
+Style/MultilineOperationIndentation:
+    EnforcedStyle: indented
+    IndentationWidth: 4
+    Exclude:
+      - 'db/schema.rb'
+      - 'db_boa/schema.rb'
+
 Layout/EndOfLine:
   EnforcedStyle: lf
 
