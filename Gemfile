@@ -62,6 +62,9 @@ group :development, :test do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'capybara'
+  gem 'coveralls', require: false
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'binding_of_caller'
   gem 'factory_bot_rails'
   gem 'pry'

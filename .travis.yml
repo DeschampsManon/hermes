@@ -1,0 +1,19 @@
+language: ruby
+before_install:
+    - gem update --system
+    - gem --version
+before_script:
+    - bundle exec rake db:create --all
+    - bundle exec rake db:migrate
+    - bundle exec rake db:seed
+after_success:
+    coveralls
+script:
+    - bundle exec rake ci:tests
+services:
+    - postgresql
+notifications:
+  email: false
+deploy:
+  api_key:
+    secure: y03P4JVk1fnefDCOw4g0et5b+AxYjqmlMHeO/cd/v+1Zf8Nu/NynqMb4j+KlTmiPgwCGgOQU+nM40JT3vm8eTYK3mWzBq6ziuxyUDprH9em/y+cdE26nk4zLg2MoGdcRV5xCVW7MIrIGaJHgBBg/j83F474Q1GodQMZYBYoFwh7u3jwqG1e/FVZ5KDhp5SxYjIS2Prnzbnzlo9ly1WOK3dkJtoMB3Ua9DbyDIeVswzZneCVavbtNH9TNNbT2uVciLytNefO0XKglyZoNatHt+EeSSE28/7F5J3EElmfvtnhTARlk0rGP1WM/CXkR753+KzZSyZKnFxzRj7dcIEUal9uRRKLrx0rdcnJoolVBhJqqgpjoYZXfqv7BaYZIzTZaXbJO1fEnrbdT1qFkdR7NV6kd/h39rzadHNstbfwjVNWzGcfi65hxFOA7wAYEvpEpz8f9/XmTmT5i+d/kOaJHHkI2Zi5KotfA5A60XfgtfaV5aVZHgAe/nbFUtRCzvKSIbJtW4OcZnvxhv6wBpABp08YHGfaJHWJ19CoOcrcsdyiEuw0V02L9nZUGA3WxZAkNHaw8MH+B7HByujfqlGH7PE+gcNQ/zOIIRvtzNzB8Uz0S8rlkDnZxT/V4TNBheMXk7KerA+ooSrADBdD1Fj41keby8IJFhMsl6mzzwTzrne4=
