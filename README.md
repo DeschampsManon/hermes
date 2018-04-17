@@ -1,25 +1,10 @@
-# README
+# HERMES
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hermes is an email template editor to build beautiful, responsive emails quickly and easily. The app is developed with ruby on rails but now I would like to use vue.js for frontend.
 
-Things you may want to cover:
+# DEMO
 
-* Ruby version
+Here is a working live demo : https://hermes-builder.herokuapp.com/
 
-* System dependencies
+# USAGE 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# hermes
