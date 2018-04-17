@@ -3,23 +3,23 @@
 module ApplicationHelper
     def flash_messages_helper
         flash.each do |msg_type, messages|
-            messages.each do |message|
-                concat(
-                    content_tag(
-                        :div,
-                        class: "alert #{bootstrap_class_for(msg_type)} flash-alert fade in"
-                    ) do
-                        concat content_tag(:p,
-                                           "<span>#{I18n.t(msg_type)}</span>".html_safe,
-                                           class: 'msg-type')
-                        concat content_tag(:button,
-                                           'x',
-                                           class: 'close',
-                                           data: { dismiss: 'alert' })
-                        concat content_tag(:div, message.html_safe)
-                    end
-                )
-            end
+            # messages.each do |message|
+            concat(
+                content_tag(
+                    :div,
+                    class: "alert #{bootstrap_class_for(msg_type)} flash-alert fade in"
+                ) do
+                    concat content_tag(:p,
+                                       "<span>#{I18n.t(msg_type)}</span>".html_safe,
+                                       class: 'msg-type')
+                    concat content_tag(:button,
+                                       'x',
+                                       class: 'close',
+                                       data: { dismiss: 'alert' })
+                    concat content_tag(:div, messages.html_safe)
+                end
+            )
+            # end if messages.class == 'Array'
         end
         nil
     end

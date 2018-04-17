@@ -10,6 +10,7 @@
 //= require data-confirm-modal
 //= require dataTables/jquery.dataTables
 //= require dataTables/extras/dataTables.responsive
+//= require dropzone
 //= require i18n
 //= require i18n/translations
 //= require jquery.validate

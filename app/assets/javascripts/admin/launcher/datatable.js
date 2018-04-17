@@ -1,11 +1,11 @@
-var dataTable;
+/* global I18n */
+
 function datatable_setup() {
     I18n.locale = $('body').data('locale');
     $.extend( true, $.fn.DataTable.defaults, {
-        responsive: true,
         language: {
             search: '',
-            lengthMenu: '<select>'+
+            lengthMenu: '<select>' +
             '<option value="10">10 '   + I18n.t('entries') + '</option>'  +
             '<option value="50">50 '   + I18n.t('entries') + '</option>'  +
             '<option value="100">100 ' + I18n.t('entries') + '</option>' +
@@ -19,7 +19,7 @@ function datatable_setup() {
         stateSave: true
     } );
 
-    dataTable = $('.datatable').DataTable({
+    $('.datatable').DataTable({
         dom: '<"datatable-filters"fl>tip'
     });
 }

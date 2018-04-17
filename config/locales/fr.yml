@@ -56,11 +56,11 @@ fr:
     select_image: Selectionner l'image
     alt: Text alternatif
     title: Titre
-    stored_image: l'image
+    controller_stored_image: l'image
     update_stored_image: Modifier l'image
     entries: entrées
     all: tous
-    user_controller: l'utilisateur
+    user_controller: L'utilisateur
     new_user: Ajouter un utilisateur
     welcome_user: Bienvenue %{user}
     users: Utilisateurs

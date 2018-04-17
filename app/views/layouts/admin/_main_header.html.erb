@@ -1,6 +1,11 @@
 <header id="main-header" class="clearfix">
     <ul>
         <li>
+            <%= link_to admin_stored_images_path do %>
+                <%= material_icon.perm_media %>
+            <% end %>
+        </li>
+        <li>
             <%= link_to admin_email_templates_path do %>
                 <%= material_icon.email %>
             <% end %>

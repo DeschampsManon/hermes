@@ -15,6 +15,7 @@ class User < ApplicationRecord
     validates_attachment_content_type :avatar, content_type: %r{/\Aimage\/.*\z/}
     validates :username, presence: :true, uniqueness: { case_sensitive: false }
 
+    before_validation :set_username
     before_validation :user_default, on: :create
 
     def self.locales
@@ -41,8 +42,11 @@ class User < ApplicationRecord
 
     private
 
-    def user_default
+    def set_username
         self.username = email.split(/@/)[0]
+    end
+
+    def user_default
         add_role Role.find(1).name.to_sym
         self.locale = I18n.locale
     end
